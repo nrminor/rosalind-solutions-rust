@@ -1,5 +1,7 @@
 # Solutions to Rosalind Problems in Rust
 
+[![Rust CI](https://github.com/nrminor/rust-rosalind-solutions/actions/workflows/rust-ci.yml/badge.svg)](https://github.com/nrminor/rust-rosalind-solutions/actions/workflows/rust-ci.yml)
+
 Solutions to each problem will be committed gradually here and will be accessible via a command line interface, e.g.:
 
 ```bash
