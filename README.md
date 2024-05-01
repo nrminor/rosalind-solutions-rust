@@ -3,7 +3,7 @@
 Solutions to each problem will be committed gradually here and will be accessible via a command line interface, e.g.:
 
 ```bash
-ros dna --input <ROSALIND FILE>
+ros_rs dna -i <ROSALIND FILE>
 ```
 
 Like with my Python solutions to these problems, I have a series of goals for these solutions that might make them more complicated than the minimum viable solutions. Those goals include:
