@@ -1,0 +1,7 @@
+/target
+/inputs
+rosalind_*.txt
+Cargo.lock
+
+.DS_Store
+._*

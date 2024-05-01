@@ -1,0 +1,29 @@
+[package]
+name = "ros_rs"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/nrminor/give-a-sheet"
+homepage = "https://github.com/nrminor/give-a-sheet"
+documentation = "https://github.com/nrminor/give-a-sheet/blob/main/README.md"
+keywords = ["science", "reproducibility", "bioinformatics", "data"]
+categories = ["command-line-utilities", "science"]
+
+[dependencies]
+clap = { version = "4.4.3", features = ["derive", "cargo"] }
+clap-verbosity-flag = "2.2.0"
+color-eyre = "0.6.3"
+derive-new = "0.6.0"
+rayon = "1.9.0"
+tracing = "0.1.40"
+
+[profile.dev.package.backtrace]
+opt-level = 3
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
