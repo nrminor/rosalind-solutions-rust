@@ -1,17 +1,21 @@
 # Solutions to Rosalind Problems in Rust
 
-[![Rust CI](https://github.com/nrminor/rust-rosalind-solutions/actions/workflows/rust-ci.yml/badge.svg)](https://github.com/nrminor/rust-rosalind-solutions/actions/workflows/rust-ci.yml)
+[![Rust CI](https://github.com/nrminor/rust-rosalind-solutions/actions/workflows/rosalind-tests.yml/badge.svg)](https://github.com/nrminor/rust-rosalind-solutions/actions/workflows/rosalind-tests.yml)
 
-Solutions to each problem will be committed gradually here and will be accessible via a command line interface, e.g.:
+Solutions to each problem will be gradually committed here and will be accessible via a command line interface. For example, to solve the DNA problem with the input text file Rosalind gives you, run the following command:
 
 ```bash
 ros_rs dna -i <ROSALIND FILE>
 ```
 
-Like with my Python solutions to these problems, I have a series of goals for these solutions that might make them more complicated than the minimum viable solutions. Those goals include:
+(this assumes you have compiled the source code and have the executable in your `$PATH`.)
+
+Like with [my Python solutions to these problems](https://github.com/nrminor/py-rosalind-solutions), I have a series of goals for these solutions that might make them more complicated than the minimum viable solutions. Those goals include:
 
 1. At minimum, practice Rust!
 2. Learn to implement bioinformatic and other common algorithms myself in a memory-efficient manner.
 3. Practice command-line interface design with `clap`.
 4. Practice unit-testing and docs-generation with `cargo`.
 5. Practice using the Helix editor, falling back to Zed when needed.
+6. Practice functional programming idioms like recursion, structural pattern match, zero side effects, and immutability.
+7. Automated formatting, linting, and testing with pre-commit hooks, github actions, and `cargo clippy`.
