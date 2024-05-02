@@ -26,7 +26,7 @@ pub struct NucleotideCounts {
 /// # Errors
 ///
 /// This function will return an error if .
-fn read_rosalind_file(input_file: &Path) -> Result<String> {
+pub fn read_rosalind_first_line(input_file: &Path) -> Result<String> {
     let file = File::open(input_file)?;
     let mut file_lines = BufReader::new(file).lines();
 
@@ -78,7 +78,7 @@ pub fn format_and_print_answer(counts: &NucleotideCounts) -> Result<String> {
 }
 
 pub fn solve_dna(input_file: &Path) -> Result<()> {
-    let dna_line = read_rosalind_file(input_file)?;
+    let dna_line = read_rosalind_first_line(input_file)?;
     let my_tally = count_bases(&dna_line)?;
     let _ = format_and_print_answer(&my_tally)?;
 

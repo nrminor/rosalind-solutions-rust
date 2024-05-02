@@ -27,4 +27,16 @@ pub enum Commands {
         #[arg(short, long, required = true)]
         input_file: PathBuf,
     },
+    #[clap(about = "Solve the Rosalind REVC challenge at https://rosalind.info/problems/revc/")]
+    REVC {
+        /// Input file from the REVC Rosalind challenge
+        #[arg(short, long, required = true)]
+        input_file: PathBuf,
+    },
+    #[clap(about = "Solve the Rosalind HAMM challenge at https://rosalind.info/problems/hamm/")]
+    HAMM {
+        /// Input file from the HAMM Rosalind challenge
+        #[arg(short, long, required = true)]
+        input_file: PathBuf,
+    },
 }
