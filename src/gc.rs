@@ -9,19 +9,19 @@ use std::{cmp::Ordering, fs::File, io::BufReader, path::Path};
 /// This function will return an error if .
 pub fn collect_gc_contents(
     mut fasta_reader: fasta::Reader<BufReader<File>>,
-) -> Result<Vec<(Vec<u8>, f32)>> {
+) -> Result<Vec<(Vec<u8>, f64)>> {
     let gc_contents = fasta_reader
         .records()
         .flatten()
         .map(|record| {
             let id = record.name().to_owned();
             let sequence = record.sequence().as_ref();
-            let c_content = sequence.iter().filter(|base| *base == &b'C').count() as f32;
-            let g_content = sequence.iter().filter(|base| *base == &b'G').count() as f32;
-            let gc_content = ((c_content + g_content) / sequence.len() as f32) * 100.0;
+            let c_content = sequence.iter().filter(|base| *base == &b'C').count() as f64;
+            let g_content = sequence.iter().filter(|base| *base == &b'G').count() as f64;
+            let gc_content = ((c_content + g_content) / sequence.len() as f64) * 100.0;
             (id, gc_content)
         })
-        .collect::<Vec<(Vec<u8>, f32)>>();
+        .collect::<Vec<(Vec<u8>, f64)>>();
 
     Ok(gc_contents)
 }
@@ -31,7 +31,7 @@ pub fn collect_gc_contents(
 /// # Errors
 ///
 /// This function will return an error if .
-pub fn find_max_gc(gc_contents: &[(Vec<u8>, f32)]) -> Result<Option<&(Vec<u8>, f32)>> {
+pub fn find_max_gc(gc_contents: &[(Vec<u8>, f64)]) -> Result<Option<&(Vec<u8>, f64)>> {
     let max_gc = gc_contents
         .iter()
         .max_by(|(_, gc_a), (_, gc_b)| gc_a.partial_cmp(gc_b).unwrap_or(Ordering::Equal));
@@ -44,7 +44,7 @@ pub fn find_max_gc(gc_contents: &[(Vec<u8>, f32)]) -> Result<Option<&(Vec<u8>, f
 /// # Errors
 ///
 /// This function will return an error if .
-pub fn report_answer(max_gc: Option<&(Vec<u8>, f32)>) -> Result<()> {
+pub fn report_answer(max_gc: Option<&(Vec<u8>, f64)>) -> Result<()> {
     match max_gc {
         Some((max_id, gc_content)) => {
             let id = String::from_utf8(max_id.to_owned())?;
