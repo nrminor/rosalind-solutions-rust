@@ -45,4 +45,10 @@ pub enum Commands {
         #[arg(short, long, required = true)]
         input_file: PathBuf,
     },
+    #[clap(about = "Solve the Rosalind GC challenge at https://rosalind.info/problems/gc/")]
+    GC {
+        /// Input file from the GC Rosalind challenge
+        #[arg(short, long, required = true)]
+        input_file: PathBuf,
+    },
 }

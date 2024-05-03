@@ -3,6 +3,7 @@ use color_eyre::eyre::Result;
 use ros_rs::{
     cli::{Cli, Commands},
     dna::solve_dna,
+    gc::solve_gc,
     hamm::solve_hamm,
     revc::solve_revc,
     rna::solve_rna,
@@ -18,6 +19,7 @@ fn main() -> Result<()> {
         Some(Commands::REVC { input_file }) => solve_revc(input_file)?,
         Some(Commands::HAMM { input_file }) => solve_hamm(input_file)?,
         Some(Commands::SUBS { input_file }) => solve_subs(input_file)?,
+        Some(Commands::GC { input_file }) => solve_gc(input_file)?,
         None => {
             eprintln!("No solutions requested.",);
             std::process::exit(0);

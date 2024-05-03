@@ -16,6 +16,7 @@ clap-verbosity-flag = "2.2.0"
 color-eyre = "0.6.3"
 derive-new = "0.6.0"
 itertools = "0.12.1"
+noodles = { version = "0.71.0", features = ["fasta"] }
 rayon = "1.9.0"
 tracing = "0.1.40"
 
