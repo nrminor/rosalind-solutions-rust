@@ -2,6 +2,11 @@ use color_eyre::eyre::{eyre, Result};
 use noodles::fasta;
 use std::{cmp::Ordering, fs::File, io::BufReader, path::Path};
 
+/// .
+///
+/// # Errors
+///
+/// This function will return an error if .
 pub fn collect_gc_contents(
     mut fasta_reader: fasta::Reader<BufReader<File>>,
 ) -> Result<Vec<(Vec<u8>, f32)>> {
@@ -21,6 +26,11 @@ pub fn collect_gc_contents(
     Ok(gc_contents)
 }
 
+/// .
+///
+/// # Errors
+///
+/// This function will return an error if .
 pub fn find_max_gc(gc_contents: &[(Vec<u8>, f32)]) -> Result<Option<&(Vec<u8>, f32)>> {
     let max_gc = gc_contents
         .iter()
@@ -29,6 +39,11 @@ pub fn find_max_gc(gc_contents: &[(Vec<u8>, f32)]) -> Result<Option<&(Vec<u8>, f
     Ok(max_gc)
 }
 
+/// .
+///
+/// # Errors
+///
+/// This function will return an error if .
 pub fn report_answer(max_gc: Option<&(Vec<u8>, f32)>) -> Result<()> {
     match max_gc {
         Some((max_id, gc_content)) => {
@@ -43,6 +58,11 @@ pub fn report_answer(max_gc: Option<&(Vec<u8>, f32)>) -> Result<()> {
     }
 }
 
+/// .
+///
+/// # Errors
+///
+/// This function will return an error if .
 pub fn solve_gc(input_file: &Path) -> Result<()> {
     let fasta_reader = File::open(input_file)
         .map(BufReader::new)
