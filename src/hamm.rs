@@ -11,7 +11,7 @@ use color_eyre::eyre::{eyre, Result};
 /// # Errors
 ///
 /// This function will return an error if .
-fn parse_sequences(input_file: &Path) -> Result<(String, String)> {
+pub fn parse_two_seq_lines(input_file: &Path) -> Result<(String, String)> {
     let file = File::open(input_file)?;
     let file_lines: Vec<String> = BufReader::new(file).lines().flatten().collect();
 
@@ -60,7 +60,7 @@ pub fn compute_distance(seq1: &str, seq2: &str) -> Result<usize> {
 }
 
 pub fn solve_hamm(input_file: &Path) -> Result<()> {
-    let (seq1, seq2) = parse_sequences(input_file)?;
+    let (seq1, seq2) = parse_two_seq_lines(input_file)?;
     let my_answer = compute_distance(&seq1, &seq2)?;
     eprintln!(
         "The Hamming distance between the provided sequences is:\n\n{}",

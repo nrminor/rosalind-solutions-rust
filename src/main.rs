@@ -6,6 +6,7 @@ use ros_rs::{
     hamm::solve_hamm,
     revc::solve_revc,
     rna::solve_rna,
+    subs::solve_subs,
 };
 
 fn main() -> Result<()> {
@@ -16,6 +17,7 @@ fn main() -> Result<()> {
         Some(Commands::RNA { input_file }) => solve_rna(input_file)?,
         Some(Commands::REVC { input_file }) => solve_revc(input_file)?,
         Some(Commands::HAMM { input_file }) => solve_hamm(input_file)?,
+        Some(Commands::SUBS { input_file }) => solve_subs(input_file)?,
         None => {
             eprintln!("No solutions requested.",);
             std::process::exit(0);
