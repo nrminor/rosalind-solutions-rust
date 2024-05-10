@@ -51,4 +51,22 @@ pub enum Commands {
         #[arg(short, long, required = true)]
         input_file: PathBuf,
     },
+    #[clap(about = "Solve the Rosalind PROT challenge at https://rosalind.info/problems/prot/")]
+    PROT {
+        /// Input file from the PROT Rosalind challenge
+        #[arg(short, long, required = true)]
+        input_file: PathBuf,
+    },
+    #[clap(about = "Solve the Rosalind FIB challenge at https://rosalind.info/problems/fib/")]
+    FIB {
+        /// Input file from the FIB Rosalind challenge
+        #[arg(short, long, required = true)]
+        input_file: PathBuf,
+    },
+    #[clap(about = "Solve the Rosalind IPRB challenge at https://rosalind.info/problems/iprb/")]
+    IPRB {
+        /// Input file from the IPRB Rosalind challenge
+        #[arg(short, long, required = true)]
+        input_file: PathBuf,
+    },
 }

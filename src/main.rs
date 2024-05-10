@@ -20,6 +20,15 @@ fn main() -> Result<()> {
         Some(Commands::HAMM { input_file }) => solve_hamm(input_file)?,
         Some(Commands::SUBS { input_file }) => solve_subs(input_file)?,
         Some(Commands::GC { input_file }) => solve_gc(input_file)?,
+        Some(Commands::PROT { input_file }) => {
+            eprintln!("Solution to PROT involving {:?} coming soon!", input_file);
+        }
+        Some(Commands::FIB { input_file }) => {
+            eprintln!("Solution to FIB involving {:?} coming soon!", input_file);
+        }
+        Some(Commands::IPRB { input_file }) => {
+            eprintln!("Solution to IPRB involving {:?} coming soon!", input_file);
+        }
         None => {
             eprintln!("No solutions requested.",);
             std::process::exit(0);
