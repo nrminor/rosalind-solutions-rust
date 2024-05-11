@@ -5,6 +5,7 @@ use ros_rs::{
     dna::solve_dna,
     gc::solve_gc,
     hamm::solve_hamm,
+    prot::solve_prot,
     revc::solve_revc,
     rna::solve_rna,
     subs::solve_subs,
@@ -20,9 +21,7 @@ fn main() -> Result<()> {
         Some(Commands::HAMM { input_file }) => solve_hamm(input_file)?,
         Some(Commands::SUBS { input_file }) => solve_subs(input_file)?,
         Some(Commands::GC { input_file }) => solve_gc(input_file)?,
-        Some(Commands::PROT { input_file }) => {
-            eprintln!("Solution to PROT involving {:?} coming soon!", input_file);
-        }
+        Some(Commands::PROT { input_file }) => solve_prot(input_file)?,
         Some(Commands::FIB { input_file }) => {
             eprintln!("Solution to FIB involving {:?} coming soon!", input_file);
         }
