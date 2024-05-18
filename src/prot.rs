@@ -119,9 +119,9 @@ fn ascii_to_index<const N: usize>(codon: &[u8]) -> Result<[usize; N]> {
 /// # Examples
 ///
 /// ```
-/// use ros_rs::prot::translate;
+/// // use ros_rs::prot::translate;
 ///
-/// assert_eq!(translate(seq), );
+/// // assert_eq!(translate(seq), );
 /// ```
 pub fn translate(seq: &[u8]) -> Result<String> {
     let peptide: String = seq
@@ -163,9 +163,9 @@ pub fn translate(seq: &[u8]) -> Result<String> {
 /// # Examples
 ///
 /// ```
-/// use ros_rs::prot::solve_prot;
+/// // use ros_rs::prot::solve_prot;
 ///
-/// assert_eq!(solve_prot(input_file), );
+/// // assert_eq!(solve_prot(input_file), );
 /// ```
 pub fn solve_prot(input_file: &Path) -> Result<()> {
     let sequence = read_rosalind_first_line(input_file)?;

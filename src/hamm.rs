@@ -13,7 +13,7 @@ use color_eyre::eyre::{eyre, Result};
 /// This function will return an error if .
 pub fn parse_two_seq_lines(input_file: &Path) -> Result<(String, String)> {
     let file = File::open(input_file)?;
-    let file_lines: Vec<String> = BufReader::new(file).lines().flatten().collect();
+    let file_lines: Vec<String> = BufReader::new(file).lines().map_while(Result::ok).collect();
 
     // check that two sequences were found
     assert_eq!(
