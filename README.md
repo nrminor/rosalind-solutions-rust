@@ -15,7 +15,8 @@ Like with [my Python solutions to these problems](https://github.com/nrminor/py-
 1. At minimum, practice Rust!
 2. Learn to implement bioinformatic and other common algorithms myself in a memory-efficient manner.
 3. Practice command-line interface design with `clap`.
-4. Practice unit-testing and docs-generation with `cargo`.
-5. Practice using the Helix editor, falling back to Zed when needed.
-6. Practice functional programming idioms like recursion, structural pattern match, zero side effects, and immutability.
-7. Automated formatting, linting, and testing with pre-commit hooks, github actions, and `cargo clippy`.
+4. Practice some of Rust's testing frameworks, e.g. black box unit-testing, doc-testing, testing with `proptest`, and perhaps even fuzz-testing.
+5. Practice docs generation through `cargo`.
+6. Practice using the Helix editor, falling back to Zed when needed.
+7. Practice functional programming idioms like recursion, structural pattern match, zero side effects, and immutability.
+8. Automated formatting, linting, and testing with pre-commit hooks, github actions, and `cargo clippy`.
